@@ -20,7 +20,6 @@ public class GoSmith {
     private int armorUpLv = 0;
 
 
-
     public void SmithMenu(Charactor chr)
     {
         ScannerManager.Initialize();
@@ -28,9 +27,6 @@ public class GoSmith {
         System.out.println("철이 부딪히는 소리가 반복적으로 들려온다.");
         System.out.println("대장장이 : 도움이 필요한가?");
 
-        boolean repeat = true;
-        while (repeat)
-        {
             if (swordUpLv == 3)
             {
                 System.out.println("무기 강화 최대치");
@@ -87,9 +83,7 @@ public class GoSmith {
                     }
                     break;
                 case 3 :
-                    repeat = false;
                     break;
             }
-        }
     }
 }
