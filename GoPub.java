@@ -38,20 +38,20 @@ public class GoPub extends Scene{
 
             case 3 :
                 System.out.println("마을로 돌아간다.");
-                break;
+                return Govillage;
 
             default:
                 System.out.println("잘못 입력하셨습니다.");
                 break;
         }
-        return null;
+        return Govillage;
     }
 
     @Override
     public Scene FirstChoose() {
         System.out.print("\n");
         System.out.println("맥주잔이 부딪히는 소리, 바드의 악기 연주 소리가 들린다.");
-        return null;
+        return Choose();
     }
     public void Bill(int pay, int heal, String healinfo)
     {
