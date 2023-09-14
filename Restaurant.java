@@ -1,13 +1,13 @@
 // 작성자 : 송한올
 // 23.09.14
-// indev 1.00
+// indev 1.0.1
 
 public class Restaurant {
 
     public void InRestaurant(Charactor chr)
     {
         PubFoodSelect();
-        FoodMenu(chr);
+        FoodMenu();
         GoPub.getInstance().PubMenu(chr);
     }
 
@@ -20,19 +20,19 @@ public class Restaurant {
         System.out.println("4. 취소");
         System.out.print("\n");
     }
-    private void FoodMenu(Charactor chr)
+    private void FoodMenu()
     {
-        Player player = new Player(chr.getNickName());
+        Player player = new Player(Player.getPlayer().getNickName());
         switch (ScannerManager.Scan())
         {
             case 1 :
-                GoPub.getInstance().Bill(chr, 3, 5, "5 HP 회복 완료!");
+                GoPub.getInstance().Bill(3, 5, "5 HP 회복 완료!");
                 break;
             case 2 :
-                GoPub.getInstance().Bill(chr, 6, 10, "10 HP 회복 완료!");
+                GoPub.getInstance().Bill(6, 10, "10 HP 회복 완료!");
                 break;
             case 3 :
-                GoPub.getInstance().Bill(chr, 9, 15, "15 HP 회복 완료!");
+                GoPub.getInstance().Bill(9, 15, "15 HP 회복 완료!");
                 break;
             case 4 :
                 break;
