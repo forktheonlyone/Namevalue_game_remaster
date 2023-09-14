@@ -57,7 +57,7 @@ public class Player extends Charactor{
         int reHp = hp + recover;
         if(reHp>maxHp) {reHp = maxHp;}
         hp = reHp;
-        System.out.print(nickName + "(이)가 Hp를 "
+        System.out.println(nickName + "(이)가 Hp를 "
                 + recover + "만큼 회복했습니다. ");
         System.out.println(nickName + "의 현재 HP : " + hp);
     }
