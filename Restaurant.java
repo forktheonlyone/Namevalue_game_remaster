@@ -8,7 +8,7 @@ public class Restaurant {
     {
         PubFoodSelect();
         FoodMenu();
-        GoPub.getInstance().PubMenu(chr);
+        GoPub.getInstance().Choose();
     }
 
     private void PubFoodSelect()
