@@ -11,6 +11,19 @@ public class Player extends Charactor{
     public int getMaxHp() {return maxHp;}
     public void setMaxHp(int maxHp) {this.maxHp = maxHp;}
 
+
+
+    private static Charactor instance = null;
+
+    public static Charactor getInstance(){
+        if(instance==null) {instance = new Player(ScannerManager.ScanName());}
+        return instance;
+    }
+
+    public static Player getPlayer(){
+        return (Player)Player.getInstance();
+    }
+
     public Player(String nickName) {
         super.nickName = nickName;
         hp = 30;
@@ -21,6 +34,8 @@ public class Player extends Charactor{
         maxHp = 30;
     }
 
+
+    
     @Override
     public void Attack(Charactor enemy) {
         int dmg = atk - enemy.getDef();
