@@ -1,6 +1,6 @@
 // 작성자 : 송한올
 // 2023.09.14
-// indev 1.0.4
+// indev 1.0.5
 
 public class GoPub extends Scene{
 
@@ -19,7 +19,6 @@ public class GoPub extends Scene{
         System.out.println("2. 방을 빌려 침대에서 잠에 들기 ( -15 Gold )");
         System.out.println("3. 마을로 돌아가기");
         System.out.print("\n");
-        return;
     }
 
     @Override
@@ -29,12 +28,13 @@ public class GoPub extends Scene{
             case 1 :
                 Restaurant restaurant = new Restaurant();
                 restaurant.InRestaurant(Player.getPlayer());
+                return Choose();
 
             case 2 :
                 System.out.println("낡은 침대이지만 포근함 만큼은 집을 생각나게 한다.");
                 System.out.print("\n");
                 Bill(15, 30, "체력을 모두 회복했다!");
-                break;
+                return Choose();
 
             case 3 :
                 System.out.println("마을로 돌아간다.");

@@ -1,6 +1,6 @@
 // 작성자 : 송한올
 // 23.09.14
-// indev 1.0.3
+// indev 1.0.4
 
 public class GoSmith extends Scene {
 
@@ -56,37 +56,39 @@ public class GoSmith extends Scene {
                 if (swordUpLv == 3) {
                     System.out.print("\n");
                     System.out.println("대장장이 : 내 능력으로는 더 이상 강화가 불가능하네.");
+                    return Choose();
                 }
                 else if (Player.getPlayer().getGold()>= upgradesGold[swordUpLv][0])
                 {
                     Player.getPlayer().setGold(Player.getPlayer().getGold() - upgradesGold[swordUpLv][0]);
                     Player.getPlayer().setAtk(gear[swordUpLv][0]);
                     swordUpLv++;
-                    SwordUpgradeFinish(Player.getPlayer());
+                    SwordUpgradeDialog(Player.getPlayer());
+                    return Choose();
                 }
-                else
-                {
+                else {
                     poorhomeless();
-
+                    return Choose();
                 }
-                break;
             case 2:
                 if (armorUpLv == 3) {
                     System.out.print("\n");
                     System.out.println("대장장이 : 내 능력으로는 더 이상 강화가 불가능하네.");
+                    return Choose();
                 }
                 else if ( Player.getPlayer().getGold() >= upgradesGold[armorUpLv][1])
                 {
                     Player.getPlayer().setGold(Player.getPlayer().getGold() - upgradesGold[armorUpLv][1]);
                     Player.getPlayer().setDef(gear[armorUpLv][1]);
                     armorUpLv++;
-                    ArmorUpgradeFinish(Player.getPlayer());
+                    ArmorUpgradeDialog(Player.getPlayer());
+                    return Choose();
                 }
                 else
                 {
                     poorhomeless();
+                    return Choose();
                 }
-                break;
             case 3:
                 break;
         }
@@ -104,18 +106,7 @@ public class GoSmith extends Scene {
     }
 
 
-
-
-    private void SmithSituation() {
-        System.out.print("\n");
-        System.out.println("용암의 열기가 느껴지는 대장간이다.");
-        System.out.println("철이 부딪히는 소리가 반복적으로 들려온다.");
-        System.out.print("\n");
-        System.out.println("대장장이 : 도움이 필요한가?");
-        System.out.print("\n");
-    }
-
-    private void SwordUpgradeFinish(Charactor chr)
+    private void SwordUpgradeDialog(Charactor chr)
     {
         System.out.print("\n");
         System.out.println("강화가 완료되었습니다.");
@@ -123,7 +114,7 @@ public class GoSmith extends Scene {
         System.out.println("현재 공격력 : " + ((Player) chr).getAtk());
         System.out.println("==================== ");
     }
-    private void ArmorUpgradeFinish(Charactor chr)
+    private void ArmorUpgradeDialog(Charactor chr)
     {
         System.out.print("\n");
         System.out.println("강화가 완료되었습니다.");
@@ -134,7 +125,9 @@ public class GoSmith extends Scene {
 
     private void poorhomeless()
     {
+        System.out.println("===============");
         System.out.println("골드가 부족합니다.");
+        System.out.println("===============");
     }
 }
 
