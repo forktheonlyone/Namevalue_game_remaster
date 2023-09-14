@@ -22,7 +22,6 @@ public class Restaurant {
     }
     private void FoodMenu()
     {
-        Player player = new Player(Player.getPlayer().getNickName());
         switch (ScannerManager.Scan())
         {
             case 1 :
