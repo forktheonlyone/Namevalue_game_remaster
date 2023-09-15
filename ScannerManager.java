@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -16,17 +17,16 @@ public class ScannerManager {
         int num = 0;
 
         try {
-            System.out.print("메뉴를 선택해주세요: ");
-
+            DialogManager.getInstance().SelectMenuDialog();
             num = scanner.nextInt();
             scanner.nextLine();
             try{TimeUnit.SECONDS.sleep(1);}
             catch (InterruptedException e) {
-                System.out.println("지연에 이상이 생겼습니다.");
+                DialogManager.getInstance().ErrorDelayDialog();
             }
         } catch (NoSuchElementException e) {
             scanner.nextLine();
-            System.out.println("입력이 잘못되었습니다.");
+            DialogManager.getInstance().WrongDialog();
         }
         return num;
     }
@@ -36,11 +36,10 @@ public class ScannerManager {
         String name = null;
 
         try {
-            System.out.print("이름을 입력해주세요: ");
-
+            DialogManager.getInstance().InputName();
             name = scanner.nextLine();
         } catch (NoSuchElementException e) {
-            System.out.println("입력이 잘못되었습니다.");
+            DialogManager.getInstance().WrongDialog();
         }
         return name;
     }

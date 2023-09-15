@@ -1,6 +1,6 @@
 // 작성자 : 송한올
 // 23.09.15
-// indev 1.0.6
+// indev v1.0.6
 
 public class GoSmith extends Scene {
 
@@ -46,9 +46,8 @@ public class GoSmith extends Scene {
         {
             System.out.println("2. 방어구 강화 ( " + upgradesGold[armorUpLv][1] + " )");
         }
-        System.out.println("3. 마을로 돌아가기");
+        DialogManager.getInstance().GoBackTownDialog();
     }
-
     @Override
     public Scene Choose() {
         Menu();
@@ -56,79 +55,47 @@ public class GoSmith extends Scene {
             case 1:
                 if (swordUpLv == 3) {
                     System.out.print("\n");
-                    System.out.println("대장장이 : 내 능력으로는 더 이상 강화가 불가능하네.");
+                    DialogManager.getInstance().BSmithCannotDialog();
                 }
                 else if (Player.getPlayer().getGold()>= upgradesGold[swordUpLv][0])
                 {
                     Player.getPlayer().setGold(Player.getPlayer().getGold() - upgradesGold[swordUpLv][0]);
                     Player.getPlayer().setAtk(gear[swordUpLv][0]);
                     swordUpLv++;
-                    SwordUpgradeDialog();
+                    DialogManager.getInstance().UpgradeSwordDialog();
                 }
                 else {
-                    poorhomeless();
+                    DialogManager.getInstance().PoorDialog();
                 }
                 return Choose();
             case 2:
                 if (armorUpLv == 3) {
                     System.out.print("\n");
-                    System.out.println("대장장이 : 내 능력으로는 더 이상 강화가 불가능하네.");
+                    DialogManager.getInstance().BSmithCannotDialog();
                 }
                 else if ( Player.getPlayer().getGold() >= upgradesGold[armorUpLv][1])
                 {
                     Player.getPlayer().setGold(Player.getPlayer().getGold() - upgradesGold[armorUpLv][1]);
                     Player.getPlayer().setDef(gear[armorUpLv][1]);
                     armorUpLv++;
-                    ArmorUpgradeDialog();
+                    DialogManager.getInstance().UpgradeArmorDialog();
                 }
                 else
                 {
-                    poorhomeless();
+                    DialogManager.getInstance().PoorDialog();
                 }
                 return Choose();
             case 3:
                 return Govillage.getInstance().FirstChoose();
             default:
-                System.out.println("잘못 입력하셨습니다.");
+                DialogManager.getInstance().WrongDialog();
                 return Choose();
         }
     }
     @Override
     public Scene FirstChoose() {
-        System.out.print("\n");
-        System.out.println("용암의 열기가 느껴지는 대장간이다.");
-        System.out.println("철이 부딪히는 소리가 반복적으로 들려온다.");
-        System.out.print("\n");
-        System.out.println("대장장이 : 도움이 필요한가?");
-        System.out.print("\n");
+        DialogManager.getInstance().SmithBackGround();
         return Choose();
-    }
-
-
-    private void SwordUpgradeDialog()
-    {
-        System.out.print("\n");
-        System.out.println("강화가 완료되었습니다.");
-        System.out.println("==================== ");
-        System.out.println("현재 공격력 : " + Player.getPlayer().getAtk());
-        System.out.println("==================== ");
-    }
-    private void ArmorUpgradeDialog()
-    {
-        System.out.print("\n");
-        System.out.println("강화가 완료되었습니다.");
-        System.out.println("==================== ");
-        System.out.println("현재 방어력 : " + Player.getPlayer().getAtk());
-        System.out.println("==================== ");
-    }
-
-    private void poorhomeless()
-    {
-        System.out.print("\n");
-        System.out.println("===============");
-        System.out.println("골드가 부족합니다.");
-        System.out.println("===============");
-        System.out.print("\n");
     }
 }
 

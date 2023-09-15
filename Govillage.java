@@ -16,10 +16,7 @@ public class Govillage extends Scene {
     }
     @Override
     public void Menu() {
-        System.out.println("1.여관으로 이동");
-        System.out.println("2.대장간으로 이동");
-        System.out.println("3.던전으로 이동");
-        System.out.println("이동할 장소를 선택해 주세요.");
+        DialogManager.getInstance().VillageMenuDialog();
     }
 
     @Override
@@ -33,7 +30,7 @@ public class Govillage extends Scene {
             case 3:
                 return GoDungeon.getInstance().FirstChoose();
             default:
-                System.out.println("잘못 입력 하였습니다.");
+                DialogManager.getInstance().WrongDialog();
                 break;
         }
         return Choose();
@@ -42,8 +39,7 @@ public class Govillage extends Scene {
     @Override
     public Scene FirstChoose() {
         Player.getPlayer().Status();
-        System.out.println("마을 사람들이 부지런히 움직이고 있다.");
-        System.out.print("\n");
+        DialogManager.getInstance().VillageBackGround();
         return Choose();
     }
 }
