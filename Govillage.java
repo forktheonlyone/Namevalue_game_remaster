@@ -19,7 +19,7 @@ public class Govillage extends Scene {
     @Override
     public void Menu()
     {
-        DialogManager.getInstance().VillageMenuDialog();
+        DialogManager.getInstance().VillageDialog();
     }
 
     @Override
@@ -36,7 +36,7 @@ public class Govillage extends Scene {
                 GoDungeon.getInstance().FirstChoose();
                 break;
             default:
-                DialogManager.getInstance().WrongDialog();
+                System.out.println("잘못 입력 하였습니다.");
                 break;
 
         }
