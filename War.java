@@ -2,7 +2,6 @@
 
 public class War extends Scene {
     private static Scene instance = null;
-
     public static Scene getInstance() {
         if (instance == null) {
             instance = new War();
@@ -115,78 +114,4 @@ public class War extends Scene {
 
 
 
-
-
-
-       /*
-
-        boolean keep = true;
-
-        while (MonsterManager.getInstance().size() > 0) {
-            Monster m = MonsterManager.getInstance().getMonsterList(0);
-
-            System.out.println(m.getNickName() + "(이)가 나타났다!");
-
-            while (m.getHp() > 0 && keep) {
-                PlayActMenu();
-
-                switch (ScannerManager.Scan()) {
-                    case 1:
-                        if (c.getSpeed() > m.getSpeed()) {
-                            c.Attack(m);
-                            if (m.getHp() > 0) {
-                                m.Attack(c);
-                            }
-                        } else {
-                            m.Attack(c);
-                            if (c.getHp() > 0) {
-                                c.Attack(m);
-                            }
-                        }
-                        break;
-                    case 2:
-                        ((Player) c).Deffence(m);
-                        break;
-                    case 3:
-                        if(i<4) { keep = false; }
-                        else {
-                            System.out.println("도망칠 수 없다!");
-                        }
-                        break;
-                }
-            }
-
-            System.out.println(m.getNickName() + "(이)가 죽었습니다.");
-
-            MonsterManager.getInstance().remove();
-        }
-
-
-        switch (i) {
-            case 1 :
-                GetGold(c,30);
-                break;
-            case 2 :
-                GetGold(c,45);
-                break;
-            case 3 :
-                GetGold(c,60);
-                break;
-        }
-
-        MonsterManager.getInstance().getMonsterList(1);
-    }
-
-    public void PlayActMenu() {
-        System.out.println("1.공격하기 ");
-        System.out.println("2.막기 ");
-        System.out.println("3.도망가기 ");
-    }
-
-    public void GetGold(Charactor c,int gold) {
-        System.out.println(gold + "골드를 획득하였습니다.");
-        ((Player)c).setGold(((Player)c).getGold()+gold);
-    }
-
-    */
 
