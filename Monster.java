@@ -13,27 +13,11 @@ public class Monster extends Charactor {
 
     }
 
+    private static Monster instance = null;
 
-
-    @Override
-    public void Attack(Charactor enemy) {
-        int damage = atk - enemy.def;
-        if(damage<1){damage=1;}
-        if(enemy.getHp() <= damage)
-        {
-            System.out.println(enemy.nickName + "의 현재 HP : 0");
-            System.out.println(enemy.nickName +"(은)는 픽 쓰러졌다.\n\n" +
-                    "더 이상 일어설 힘도 나지 않고 눈은 점점 감긴다.\n" +
-                    "누군가가 도움을 줬으면 했다.\n\n" +
-                    "하지만 아무도 오지 않았다.\n\n" +
-                    "Bad Ending");
-            System.exit(0);
-        }
-        else {enemy.setHp(enemy.getHp() - damage);}
-        System.out.println(getNickName()+"(이)가 "+enemy.getNickName()+"에게 "+damage+"만큼 데미지를 주었습니다.");
-        System.out.println(enemy.nickName+"의 현재 HP : "+enemy.hp);
+    public static synchronized Monster getInstance(){
+        if(instance == null)
+            instance = new Monster("",0,0,0,0);
+        return instance;
     }
-
-
-
 }
