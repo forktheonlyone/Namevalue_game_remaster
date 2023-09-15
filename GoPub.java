@@ -1,6 +1,6 @@
 // 작성자 : 송한올
 // 2023.09.15
-// indev 1.0.8
+// indev 1.0.9
 
 public class GoPub extends Scene{
 
@@ -32,9 +32,7 @@ public class GoPub extends Scene{
                 return Choose();
 
             case 2 :
-                System.out.println("낡은 침대이지만 포근함 만큼은 집을 생각나게 한다.");
-                System.out.print("\n");
-                Bill(15, 30, "체력을 모두 회복했다!");
+                Bill("낡은 침대이지만 포근함 만큼은 집을 생각나게 한다.", 15, 30, "체력을 모두 회복했다!");
                 return Choose();
 
             case 3 :
@@ -53,13 +51,15 @@ public class GoPub extends Scene{
         System.out.println("맥주잔이 부딪히는 소리, 바드의 악기 연주 소리가 들린다.");
         return Choose();
     }
-    public void Bill(int pay, int heal, String healinfo)
+    public void Bill(String info,int pay, int heal, String healInfo)
     {
         if (Player.getPlayer().getGold() >= pay)
         {
+            System.out.println(info);
+            System.out.print("\n");
             Player.getPlayer().setGold(Player.getPlayer().getGold() - pay);
             Player.getPlayer().hpRecovery(heal);
-            System.out.println(healinfo);
+            System.out.println(healInfo);
         }
         else
         {
