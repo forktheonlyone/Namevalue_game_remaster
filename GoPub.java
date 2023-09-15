@@ -14,11 +14,7 @@ public class GoPub extends Scene{
 
     @Override
     public void Menu() {
-        System.out.print("\n");
-        System.out.println("1. 음식 주문하기 ( 음식을 이용해 체력을 회복하세요. )");
-        System.out.println("2. 방을 빌려 침대에서 잠에 들기 ( -15 Gold )");
-        System.out.println("3. 마을로 돌아가기");
-        System.out.print("\n");
+        DialogManager.getInstance().PubMenuDialog();
     }
 
     @Override
@@ -36,19 +32,18 @@ public class GoPub extends Scene{
                 return Choose();
 
             case 3 :
-                System.out.println("마을로 돌아간다.");
+                DialogManager.getInstance().GoBackTownDialog();
                 return Govillage.getInstance().FirstChoose();
 
             default:
-                System.out.println("잘못 입력하였습니다.");
+                DialogManager.getInstance().WrongDialog();
                 return Choose();
         }
     }
 
     @Override
     public Scene FirstChoose() {
-        System.out.print("\n");
-        System.out.println("맥주잔이 부딪히는 소리, 바드의 악기 연주 소리가 들린다.");
+        DialogManager.getInstance().PubBackGround();
         return Choose();
     }
     public void Bill(String info,int pay, int heal, String healInfo)
@@ -63,10 +58,7 @@ public class GoPub extends Scene{
         }
         else
         {
-            System.out.print("\n");
-            System.out.println("===============");
-            System.out.println("골드가 부족합니다.");
-            System.out.println("===============");
+            DialogManager.getInstance().PoorDialog();
         }
     }
 }

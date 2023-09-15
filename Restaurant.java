@@ -6,21 +6,12 @@ public class Restaurant {
 
     public void InRestaurant()
     {
-        PubFoodSelect();
-        FoodMenu();
+        DialogManager.getInstance().FoodMenuDialog();
+        FoodSelect();
         GoPub.getInstance().Choose();
     }
 
-    private void PubFoodSelect()
-    {
-        System.out.print("\n");
-        System.out.println("1. 빵 ( -3 Gold ) / ( +5 HP )");
-        System.out.println("2. 스튜 ( -6 Gold ) / ( +10 HP )");
-        System.out.println("3. 돼지고기 통구이 ( -9 Gold ) / ( +15 HP )");
-        System.out.println("4. 취소");
-        System.out.print("\n");
-    }
-    private void FoodMenu()
+    private void FoodSelect()
     {
         switch (ScannerManager.Scan())
         {
