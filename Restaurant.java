@@ -4,7 +4,7 @@
 
 public class Restaurant {
 
-    public void InRestaurant(Charactor chr)
+    public void InRestaurant()
     {
         PubFoodSelect();
         FoodMenu();

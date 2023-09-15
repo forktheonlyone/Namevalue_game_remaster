@@ -1,6 +1,6 @@
 // 작성자 : 송한올
-// 2023.09.14
-// indev 1.0.5
+// 2023.09.15
+// indev 1.0.6
 
 public class GoPub extends Scene{
 
@@ -27,7 +27,7 @@ public class GoPub extends Scene{
         {
             case 1 :
                 Restaurant restaurant = new Restaurant();
-                restaurant.InRestaurant(Player.getPlayer());
+                restaurant.InRestaurant();
                 return Choose();
 
             case 2 :
