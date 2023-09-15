@@ -1,6 +1,6 @@
 // 작성자 : 송한올
 // 23.09.14
-// indev 1.0.5
+// indev 1.0.6
 
 public class GoSmith extends Scene {
 
@@ -63,7 +63,7 @@ public class GoSmith extends Scene {
                     Player.getPlayer().setGold(Player.getPlayer().getGold() - upgradesGold[swordUpLv][0]);
                     Player.getPlayer().setAtk(gear[swordUpLv][0]);
                     swordUpLv++;
-                    SwordUpgradeDialog(Player.getPlayer());
+                    SwordUpgradeDialog();
                 }
                 else {
                     poorhomeless();
@@ -79,7 +79,7 @@ public class GoSmith extends Scene {
                     Player.getPlayer().setGold(Player.getPlayer().getGold() - upgradesGold[armorUpLv][1]);
                     Player.getPlayer().setDef(gear[armorUpLv][1]);
                     armorUpLv++;
-                    ArmorUpgradeDialog(Player.getPlayer());
+                    ArmorUpgradeDialog();
                 }
                 else
                 {
@@ -105,20 +105,20 @@ public class GoSmith extends Scene {
     }
 
 
-    private void SwordUpgradeDialog(Charactor chr)
+    private void SwordUpgradeDialog()
     {
         System.out.print("\n");
         System.out.println("강화가 완료되었습니다.");
         System.out.println("==================== ");
-        System.out.println("현재 공격력 : " + ((Player) chr).getAtk());
+        System.out.println("현재 공격력 : " + Player.getPlayer().getAtk());
         System.out.println("==================== ");
     }
-    private void ArmorUpgradeDialog(Charactor chr)
+    private void ArmorUpgradeDialog()
     {
         System.out.print("\n");
         System.out.println("강화가 완료되었습니다.");
         System.out.println("==================== ");
-        System.out.println("현재 방어력 : " + ((Player) chr).getDef());
+        System.out.println("현재 방어력 : " + Player.getPlayer().getAtk());
         System.out.println("==================== ");
     }
 
