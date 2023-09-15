@@ -1,6 +1,6 @@
 // 작성자 : 송한올
 // 23.09.15
-// indev 1.0.2
+// indev v1.0.2
 
 public class Restaurant {
 
@@ -13,12 +13,7 @@ public class Restaurant {
 
     private void PubFoodSelect()
     {
-        System.out.print("\n");
-        System.out.println("1. 빵 ( -3 Gold ) / ( +5 HP )");
-        System.out.println("2. 스튜 ( -6 Gold ) / ( +10 HP )");
-        System.out.println("3. 돼지고기 통구이 ( -9 Gold ) / ( +15 HP )");
-        System.out.println("4. 취소");
-        System.out.print("\n");
+        DialogManager.getInstance().FoodMenuDialog();
     }
     private void FoodMenu()
     {
