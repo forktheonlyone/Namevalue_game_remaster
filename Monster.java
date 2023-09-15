@@ -4,7 +4,7 @@
 
 public class Monster extends Charactor {
 
-    public Monster (String nickName, int hp, int atk, int def, int speed) {
+    public void setMonster (String nickName, int hp, int atk, int def, int speed) {
         this.nickName=nickName;
         this.hp=hp;
         this.atk=atk;
@@ -13,11 +13,11 @@ public class Monster extends Charactor {
 
     }
 
-    private static Monster instance = null;
+    private static Charactor instance = null;
 
-    public static synchronized Monster getInstance(){
+    public static Charactor getInstance(){
         if(instance == null)
-            instance = new Monster("",0,0,0,0);
+            instance = new Monster();
         return instance;
     }
 }
