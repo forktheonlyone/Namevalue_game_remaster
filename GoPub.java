@@ -40,7 +40,7 @@ public class GoPub extends Scene{
                 return Govillage.getInstance().FirstChoose();
 
             default:
-                System.out.println("잘못 입력하셨습니다.");
+                System.out.println("잘못 입력하였습니다.");
                 return Choose();
         }
     }
@@ -63,6 +63,7 @@ public class GoPub extends Scene{
         }
         else
         {
+            System.out.print("\n");
             System.out.println("===============");
             System.out.println("골드가 부족합니다.");
             System.out.println("===============");

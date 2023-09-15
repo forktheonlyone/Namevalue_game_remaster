@@ -1,5 +1,5 @@
 // 작성자 : 송한올
-// 23.09.14
+// 23.09.15
 // indev 1.0.2
 
 public class Restaurant {
