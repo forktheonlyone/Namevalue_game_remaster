@@ -1,6 +1,6 @@
 // 작성자 : 송한올
 // 2023.09.15
-// indev 1.0.6
+// indev 1.0.7
 
 public class GoPub extends Scene{
 
@@ -23,6 +23,7 @@ public class GoPub extends Scene{
 
     @Override
     public Scene Choose() {
+
         switch (ScannerManager.Scan())
         {
             case 1 :
@@ -38,13 +39,12 @@ public class GoPub extends Scene{
 
             case 3 :
                 System.out.println("마을로 돌아간다.");
-                return Govillage;
+                return Govillage.getInstance().FirstChoose();
 
             default:
                 System.out.println("잘못 입력하셨습니다.");
-                break;
+                return Choose();
         }
-        return Govillage;
     }
 
     @Override
