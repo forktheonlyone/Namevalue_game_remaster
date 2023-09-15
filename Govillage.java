@@ -7,39 +7,27 @@ import java.util.Scanner;
 
 public class Govillage extends Scene {
 
-    private static Govillage instance = null;
 
-    public static synchronized Govillage getInstance(){
-        if(instance == null)
-            instance = new Govillage();
-        return instance;
-    }
     @Override
     public void Menu() {
-        DialogManager.getInstance().VillageMenuDialog();
+        System.out.println("1.여관으로 이동");
+        System.out.println("2.대장간으로 이동");
+        System.out.println("3.던전으로 이동");
     }
 
     @Override
     public Scene Choose() {
         Menu();
-        switch(ScannerManager.Scan()){
-            case 1:
-                return GoPub.getInstance().FirstChoose();
-            case 2:
-                return GoSmith.getInstance().FirstChoose();
-            case 3:
-                return GoDungeon.getInstance().FirstChoose();
-            default:
-                DialogManager.getInstance().WrongDialog();
-                break;
-        }
-        return Choose();
+        SceneManager.getInstance().sceneSelect();
+
+        return null;
     }
 
     @Override
     public Scene FirstChoose() {
         Player.getPlayer().Status();
-        DialogManager.getInstance().VillageBackGround();
+        System.out.println("마을 사람들이 부지런히 움직이고 있다.");
+        System.out.print("\n");
         return Choose();
     }
 }
