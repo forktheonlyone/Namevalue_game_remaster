@@ -14,13 +14,8 @@ public class Govillage extends Scene {
             instance = new Govillage();
         return instance;
     }
-
-
-
-
     @Override
     public void Menu() {
-
         System.out.println("1.여관으로 이동");
         System.out.println("2.대장간으로 이동");
         System.out.println("3.던전으로 이동");
@@ -32,18 +27,14 @@ public class Govillage extends Scene {
         Menu();
         switch(ScannerManager.Scan()){
             case 1:
-                GoPub.getInstance().FirstChoose();
-                break;
+                return GoPub.getInstance().FirstChoose();
             case 2:
-                GoSmith.getInstance().FirstChoose();
-                break;
+                return GoSmith.getInstance().FirstChoose();
             case 3:
-                GoDungeon.getInstance().FirstChoose();
-                break;
+                return GoDungeon.getInstance().FirstChoose();
             default:
                 System.out.println("잘못 입력 하였습니다.");
                 break;
-
         }
         return Choose();
     }
@@ -51,10 +42,8 @@ public class Govillage extends Scene {
     @Override
     public Scene FirstChoose() {
         Player.getPlayer().Status();
-
         System.out.println("마을 사람들이 부지런히 움직이고 있다.");
         System.out.print("\n");
-
         return Choose();
     }
 }
