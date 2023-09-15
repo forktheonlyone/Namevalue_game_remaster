@@ -1,6 +1,6 @@
 // 작성자 : 송한올
 // 23.09.14
-// indev 1.0.4
+// indev 1.0.5
 
 public class GoSmith extends Scene {
 
@@ -51,12 +51,12 @@ public class GoSmith extends Scene {
 
     @Override
     public Scene Choose() {
+        Menu();
         switch (ScannerManager.Scan()) {
             case 1:
                 if (swordUpLv == 3) {
                     System.out.print("\n");
                     System.out.println("대장장이 : 내 능력으로는 더 이상 강화가 불가능하네.");
-                    return Choose();
                 }
                 else if (Player.getPlayer().getGold()>= upgradesGold[swordUpLv][0])
                 {
@@ -64,17 +64,15 @@ public class GoSmith extends Scene {
                     Player.getPlayer().setAtk(gear[swordUpLv][0]);
                     swordUpLv++;
                     SwordUpgradeDialog(Player.getPlayer());
-                    return Choose();
                 }
                 else {
                     poorhomeless();
-                    return Choose();
                 }
+                return Choose();
             case 2:
                 if (armorUpLv == 3) {
                     System.out.print("\n");
                     System.out.println("대장장이 : 내 능력으로는 더 이상 강화가 불가능하네.");
-                    return Choose();
                 }
                 else if ( Player.getPlayer().getGold() >= upgradesGold[armorUpLv][1])
                 {
@@ -82,17 +80,18 @@ public class GoSmith extends Scene {
                     Player.getPlayer().setDef(gear[armorUpLv][1]);
                     armorUpLv++;
                     ArmorUpgradeDialog(Player.getPlayer());
-                    return Choose();
                 }
                 else
                 {
                     poorhomeless();
-                    return Choose();
                 }
+                return Choose();
             case 3:
-                break;
+                return Govillage.getInstance().FirstChoose();
+            default:
+                System.out.println("잘못 입력하셨습니다.");
+                return Choose();
         }
-        return null;
     }
     @Override
     public Scene FirstChoose() {
@@ -102,7 +101,7 @@ public class GoSmith extends Scene {
         System.out.print("\n");
         System.out.println("대장장이 : 도움이 필요한가?");
         System.out.print("\n");
-        return null;
+        return Choose();
     }
 
 
