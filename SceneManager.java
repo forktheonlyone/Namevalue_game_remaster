@@ -13,30 +13,13 @@ public class SceneManager {
     public boolean isCheck() {return check;}
     public void setCheck(boolean check) {this.check = check;}
 
-    /*
-    public void goPub() {
-        GoPub gopub = GoPub.getInstance();
-        gopub.PubMenu();
-    }
-
-    public void goSmith() {
-        GoPub gosmith = GoPub.getInstance();
-        gosmith.PubMenu();
-    }
-
-    public void goDungeon() {
-        GoPub godungeon = GoPub.getInstance();
-        godungeon.PubMenu();
-    }
-*/
-
 
     public void setScen(int id){
 
         switch (id) {
             case 1 -> sceneState = new GoPub();
             case 2 -> sceneState = new GoSmith();
-            case 3 -> sceneState = new GoDungeon();
+            case 3 -> GoDungeon.getInstance().Update();
             default -> System.out.println("다시 입력해주세요");
         }
     }
@@ -51,3 +34,16 @@ public class SceneManager {
 
 
 }
+    public void goPub() {
+        GoPub gopub = GoPub.getInstance();
+        gopub.Choose();
+    }
+
+    public void goSmith() {
+        GoPub gosmith = GoPub.getInstance();
+        gosmith.Choose();
+    }
+
+    public void goDungeon() {
+        GoPub godungeon = GoPub.getInstance();
+        godungeon.Update();
