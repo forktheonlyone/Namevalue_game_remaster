@@ -62,8 +62,12 @@ public class War extends Scene {
 
     public void Deffence(Charactor player, Charactor enemy){
         int dmg = (enemy.atk - player.def + 1) / 2;
-        if (dmg < 1) {
-            dmg = 1;
+        if (dmg < 1) {dmg = 1;}
+        if (player.getHp() > dmg) {
+            player.setHp(player.getHp() - dmg);
+        }
+        else{
+            player.setHp(0);
         }
         System.out.println(enemy.getNickName() + "(이)가 " + player.getNickName() + "에게 "
                 + dmg + "만큼 데미지를 주었습니다. ");
