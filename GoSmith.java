@@ -1,5 +1,5 @@
 // 작성자 : 송한올
-// 23.09.14
+// 23.09.15
 // indev 1.0.6
 
 public class GoSmith extends Scene {
@@ -124,9 +124,11 @@ public class GoSmith extends Scene {
 
     private void poorhomeless()
     {
+        System.out.print("\n");
         System.out.println("===============");
         System.out.println("골드가 부족합니다.");
         System.out.println("===============");
+        System.out.print("\n");
     }
 }
 
