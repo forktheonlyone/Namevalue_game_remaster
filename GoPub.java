@@ -1,6 +1,6 @@
 // 작성자 : 송한올
 // 2023.09.15
-// indev 1.0.7
+// indev 1.0.8
 
 public class GoPub extends Scene{
 
@@ -23,7 +23,7 @@ public class GoPub extends Scene{
 
     @Override
     public Scene Choose() {
-
+        Menu();
         switch (ScannerManager.Scan())
         {
             case 1 :
