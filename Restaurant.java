@@ -1,6 +1,6 @@
 // 작성자 : 송한올
-// 23.09.15
-// indev v1.0.2
+// 23.09.18
+// indev v1.0.3
 
 public class Restaurant extends Scene{
     @Override
