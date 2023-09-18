@@ -1,6 +1,6 @@
 // 작성자 : 송한올
-// 2023.09.15
-// indev v1.0.9
+// 2023.09.18
+// indev v1.0.10
 
 public class GoPub extends Scene{
 
