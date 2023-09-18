@@ -1,6 +1,6 @@
 // 작성자 : 송한올
 // 23.09.18
-// Indev v1.0.2
+// Indev v1.0.3
 public class DialogManager {
     private static DialogManager instance = null;
     public static DialogManager getInstance() {
@@ -39,6 +39,7 @@ public class DialogManager {
     }
     public void SelectMenuDialog()
     {
+        System.out.print("\n");
         System.out.print("메뉴를 선택해주세요: ");
     }
     public void ErrorDelayDialog()
@@ -54,6 +55,7 @@ public class DialogManager {
     }
     public void VillageBackGround()
     {
+        System.out.print("\n");
         System.out.println("마을 사람들이 부지런히 움직이고 있다.");
         System.out.print("\n");
     }
