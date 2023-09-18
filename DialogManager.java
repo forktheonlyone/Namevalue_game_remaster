@@ -1,6 +1,6 @@
 // 작성자 : 송한올
-// 23.09.15
-// Indev v1.0.0
+// 23.09.18
+// Indev v1.0.1
 public class DialogManager {
     private static DialogManager instance = null;
     public static DialogManager getInstance() {
@@ -112,23 +112,38 @@ public class DialogManager {
     }
     public void SmithUpgradeMenu()
     {
-        if (SceneManager.getInstance().getSmith().swordUpLv == 3)
-        {
+        System.out.print("\n");
+        if (Player.getInstance().getAtk()==8)
             System.out.println("무기 강화 최대치");
-        }
         else
-        {
-            System.out.println("1. 무기 강화 ( " + SceneManager.getInstance().getSmith().upgradesGold
-                    [SceneManager.getInstance().getSmith().swordUpLv][0] + " )");
-        }
-        if (SceneManager.getInstance().getSmith().armorUpLv == 3)
-        {
+            System.out.println("1. 무기 강화 / 가격 : " +
+                    SceneManager.getInstance().getSmith().upgradeGold[0][SceneManager.getInstance().getSmith().Lv[0]]);
+
+        if (Player.getInstance().getDef()==3)
             System.out.println("방어구 강화 최대치");
-        }
         else
-        {
-            System.out.println("2. 방어구 강화 ( " + SceneManager.getInstance().getSmith().upgradesGold
-                    [SceneManager.getInstance().getSmith().armorUpLv][1] + " )");
+            System.out.println("1. 방어구 강화 / 가격 : " +
+                    SceneManager.getInstance().getSmith().upgradeGold[1][SceneManager.getInstance().getSmith().Lv[1]]);
+
+    }
+    public void SmithUpgradeDialog(int i)
+    {
+        int j = 0;
+        if (i==0) {
+            j = Player.getPlayer().getAtk();
+            System.out.print("\n");
+            System.out.println("강화가 완료되었습니다.");
+            System.out.println("==================== ");
+            System.out.println("현재 공격력 : " + j);
+            System.out.println("==================== ");
+        }
+        else {
+            j = Player.getPlayer().getDef();
+            System.out.print("\n");
+            System.out.println("강화가 완료되었습니다.");
+            System.out.println("==================== ");
+            System.out.println("현재 방어력 : " + j);
+            System.out.println("==================== ");
         }
     }
     public void UpgradeSwordDialog()
