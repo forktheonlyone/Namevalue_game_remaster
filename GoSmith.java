@@ -1,6 +1,6 @@
 // 작성자 : 송한올
 // 23.09.18
-// indev v1.0.11
+// indev v1.0.12
 
 public class GoSmith extends Scene {
 
@@ -35,16 +35,25 @@ public class GoSmith extends Scene {
         DialogManager.getInstance().SmithBackGround();
         return Choose();
     }
-    private void Upgrade(int i) {
+    private void Upgrade(int i)
+    {
         int lv = Lv[i];
         if (lv == 3)
         {
             DialogManager.getInstance().BSmithCannotDialog();
         }
-        else if (Player.getPlayer().GoldCost(upgradeGold[i][lv])) {
-            Player.getInstance().setAtk(gear[i][lv]);
-            DialogManager.getInstance().SmithUpgradeDialog(i);
-            Lv[i]++;
+        else if (Player.getPlayer().GoldCost(upgradeGold[i][lv]))
+        {
+            if (i == 0)
+            {
+                Player.getInstance().setAtk(gear[i][lv]);
+            }
+            else
+            {
+                Player.getInstance().setDef(gear[i][lv]);
+            }
+                DialogManager.getInstance().SmithUpgradeDialog(i);
+                Lv[i]++;
         }
     }
 }
