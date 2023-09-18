@@ -43,7 +43,7 @@ public class Player extends Charactor{
 
     public boolean GoldCost(int cost){
         if (gold < cost) {
-            System.out.println("골드가 부족합니다.");
+            DialogManager.getInstance().PoorDialog();
             return false;
         }
         else {
@@ -59,6 +59,7 @@ public class Player extends Charactor{
     }
 
     public void Status(){
+        System.out.print("\n");
         System.out.println("===========정보창============");
         System.out.println("이름 : " + nickName);
         System.out.println("체력 : " + hp+" / "+maxHp);
