@@ -4,14 +4,6 @@
 
 public class GoPub extends Scene{
 
-    private static GoPub instance = null;
-    public static GoPub getInstance() {
-        if (instance == null) {
-            instance = new GoPub();
-        }
-        return instance;
-    }
-
     @Override
     public void Menu() {
         DialogManager.getInstance().PubMenuDialog();
@@ -33,7 +25,7 @@ public class GoPub extends Scene{
 
             case 3 :
                 DialogManager.getInstance().GoBackTownDialog();
-                return Govillage.getInstance().FirstChoose();
+                return SceneManager.getInstance().getVillage().FirstChoose();
 
             default:
                 DialogManager.getInstance().WrongDialog();

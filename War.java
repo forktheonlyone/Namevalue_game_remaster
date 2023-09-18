@@ -98,7 +98,7 @@ public class War extends Scene {
             return Choose();
         }
         else
-            return Govillage.getInstance().FirstChoose();
+            return SceneManager.getInstance().getVillage().FirstChoose();
     }
 }
 

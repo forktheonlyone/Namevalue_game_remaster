@@ -40,7 +40,7 @@ public class GoDungeon extends Scene {
                 DialogManager.getInstance().WrongDialog();
                 break;
         }
-         return Govillage.getInstance().FirstChoose();
+         return SceneManager.getInstance().getVillage().FirstChoose();
     }
 
     public Scene FirstChoose() {
