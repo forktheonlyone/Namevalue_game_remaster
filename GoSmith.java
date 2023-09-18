@@ -4,14 +4,6 @@
 
 public class GoSmith extends Scene {
 
-    private static GoSmith instance = null;
-    public static GoSmith getInstance() {
-        if (instance == null) {
-            instance = new GoSmith();
-        }
-        return instance;
-    }
-
     private int[][] gear =
             {
                     {4, 1},
@@ -86,7 +78,7 @@ public class GoSmith extends Scene {
                 }
                 return Choose();
             case 3:
-                return Govillage.getInstance().FirstChoose();
+                return SceneManager.getInstance().getVillage().FirstChoose();
             default:
                 DialogManager.getInstance().WrongDialog();
                 return Choose();

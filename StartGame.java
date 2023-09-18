@@ -6,24 +6,7 @@ public class StartGame {
     public static void main(String[] args) {
 
         ScannerManager.Initialize();
-        System.out.println
-                (
-                                "   ■     ■  ■■■■■   ■     ■     ■  \n" +
-                                "   ■     ■      ■   ■  ■■■■■■■  ■  \n" +
-                                "   ■     ■      ■   ■    ■■■    ■  \n" +
-                                "   ■     ■      ■   ■   ■■■■■   ■  \n" +
-                                "   ■■ ■■■■  ■■■■■   ■  ■■   ■■  ■■■\n" +
-                                "  ■■■    ■  ■       ■  ■■   ■■  ■  \n" +
-                                " ■■■■■   ■  ■       ■   ■■■■■   ■  \n" +
-                                "■■■  ■■  ■  ■       ■    ■■■    ■  \n" +
-                                "■■    ■  ■  ■■■■■■■ ■    ■      ■  \n" +
-                                "         ■          ■    ■■■■■■■■  \n" +
-                                "\n NameValue's Text RPG \n "+
-                                "'Frostmourne Sword'\n");
-
-        System.out.println("1. 게임 시작");
-        System.out.println("2. 종료");
-
+        DialogManager.getInstance().TitleDialog();
         switch (ScannerManager.Scan())
         {
             case 1 :

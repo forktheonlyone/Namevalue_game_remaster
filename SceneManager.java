@@ -11,12 +11,12 @@ public class SceneManager {
         return instance;
     }
 
-    private final Scene village = new Govillage();
+    private final Scene village = new GoVillage();
     private final Scene pub = new GoPub();
     private final Scene smith = new GoSmith();
     private final Scene dungeon = new GoDungeon();
 
-    public Govillage getVillage() {return (Govillage)village;}
+    public GoVillage getVillage() {return (GoVillage)village;}
     public GoPub getPub() {return (GoPub)pub;}
     public GoSmith getSmith() {return (GoSmith)smith;}
     public GoDungeon getDungeon() {return (GoDungeon)dungeon;}
