@@ -1,6 +1,6 @@
 // 작성자 : 송한올
-// 23.09.15
-// indev v1.0.6
+// 23.09.18
+// indev v1.0.8
 
 public class GoSmith extends Scene {
 
@@ -31,7 +31,6 @@ public class GoSmith extends Scene {
         switch (ScannerManager.Scan()) {
             case 1:
                 if (swordUpLv == 3) {
-                    System.out.print("\n");
                     DialogManager.getInstance().BSmithCannotDialog();
                 }
                 else if (Player.getPlayer().getGold()>= upgradesGold[swordUpLv][0])
@@ -47,7 +46,6 @@ public class GoSmith extends Scene {
                 return Choose();
             case 2:
                 if (armorUpLv == 3) {
-                    System.out.print("\n");
                     DialogManager.getInstance().BSmithCannotDialog();
                 }
                 else if ( Player.getPlayer().getGold() >= upgradesGold[armorUpLv][1])
