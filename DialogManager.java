@@ -121,7 +121,7 @@ public class DialogManager {
         if (Player.getInstance().getDef()>=3)
             System.out.println("방어구 강화 최대치");
         else
-            System.out.println("1. 방어구 강화 / 가격 : " +
+            System.out.println("2. 방어구 강화 / 가격 : " +
                     SceneManager.getInstance().getSmith().upgradeGold[1][SceneManager.getInstance().getSmith().Lv[1]]);
 
     }
