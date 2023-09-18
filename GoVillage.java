@@ -14,7 +14,7 @@ public class GoVillage extends Scene {
     @Override
     public Scene Choose() {
         Menu();
-        SceneManager.getInstance().sceneSelect();
+        SceneManager.getInstance().VillageMoveSelect();
 
         return null;
     }
