@@ -1,6 +1,6 @@
 // 작성자 : 송한올
 // 23.09.18
-// Indev v1.0.3
+// Indev v1.0.4
 public class DialogManager {
     private static DialogManager instance = null;
     public static DialogManager getInstance() {
@@ -52,6 +52,7 @@ public class DialogManager {
         System.out.println("===============");
         System.out.println("골드가 부족합니다.");
         System.out.println("===============");
+        System.out.print("\n");
     }
     public void VillageBackGround()
     {
@@ -70,14 +71,13 @@ public class DialogManager {
     {
         System.out.print("\n");
         System.out.println("맥주잔이 부딪히는 소리, 바드의 악기 연주 소리가 들린다.");
+        System.out.print("\n");
     }
     public void PubMenuDialog()
     {
-        System.out.print("\n");
         System.out.println("1. 음식 주문하기 ( 음식을 이용해 체력을 회복하세요. )");
         System.out.println("2. 방을 빌려 침대에서 잠에 들기 ( -15 Gold )");
         System.out.println("3. 마을로 돌아가기");
-        System.out.print("\n");
     }
     public void GoBackTownDialog()
     {
@@ -89,7 +89,6 @@ public class DialogManager {
         System.out.println("2. 스튜 ( -6 Gold ) / ( +10 HP )");
         System.out.println("3. 돼지고기 통구이 ( -9 Gold ) / ( +15 HP )");
         System.out.println("4. 취소");
-        System.out.print("\n");
     }
     public void RestaurantBackGround()
     {
@@ -136,6 +135,7 @@ public class DialogManager {
             System.out.println("==================== ");
             System.out.println("현재 공격력 : " + j);
             System.out.println("==================== ");
+            System.out.print("\n");
         }
         else {
             j = Player.getPlayer().getDef();
@@ -144,23 +144,8 @@ public class DialogManager {
             System.out.println("==================== ");
             System.out.println("현재 방어력 : " + j);
             System.out.println("==================== ");
+            System.out.print("\n");
         }
-    }
-    public void UpgradeSwordDialog()
-    {
-        System.out.print("\n");
-        System.out.println("강화가 완료되었습니다.");
-        System.out.println("==================== ");
-        System.out.println("현재 공격력 : " + Player.getPlayer().getAtk());
-        System.out.println("==================== ");
-    }
-    public void UpgradeArmorDialog()
-    {
-        System.out.print("\n");
-        System.out.println("강화가 완료되었습니다.");
-        System.out.println("==================== ");
-        System.out.println("현재 방어력 : " + Player.getPlayer().getAtk());
-        System.out.println("==================== ");
     }
     public void WarMenuDialog()
     {
