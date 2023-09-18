@@ -1,6 +1,6 @@
 // 작성자 : 송한올
 // 2023.09.18
-// indev v1.0.10
+// indev v1.0.11
 
 public class GoPub extends Scene{
 
@@ -19,7 +19,8 @@ public class GoPub extends Scene{
                 return Choose();
 
             case 2 :
-                Bill("낡은 침대이지만 포근함 만큼은 집을 생각나게 한다.", 15, 30, "체력을 모두 회복했다!");
+                Player.getPlayer().GoldCost(15);
+                Bill("낡은 침대이지만 포근함 만큼은 집을 생각나게 한다.", 30, "체력을 모두 회복했다!");
                 return Choose();
 
             case 3 :
@@ -37,20 +38,13 @@ public class GoPub extends Scene{
         DialogManager.getInstance().PubBackGround();
         return Choose();
     }
-    public void Bill(String info,int pay, int heal, String healInfo)
+    public void Bill(String info, int heal, String healInfo)
     {
-        if (Player.getPlayer().getGold() >= pay)
-        {
-            System.out.println(info);
-            System.out.print("\n");
-            Player.getPlayer().setGold(Player.getPlayer().getGold() - pay);
-            Player.getPlayer().hpRecovery(heal);
-            System.out.println(healInfo);
-        }
-        else
-        {
-            DialogManager.getInstance().PoorDialog();
-        }
+        System.out.println(info);
+        System.out.print("\n");
+        Player.getPlayer().hpRecovery(heal);
+        System.out.println(healInfo);
     }
+
 }
 
