@@ -10,9 +10,7 @@ public class Player extends Charactor{
 
     public int getMaxHp() {return maxHp;}
     public void setMaxHp(int maxHp) {this.maxHp = maxHp;}
-
-
-
+    
     private static Charactor instance = null;
 
     public static Charactor getInstance(){
@@ -35,12 +33,29 @@ public class Player extends Charactor{
     }
 
     public void hpRecovery(int recover){
-        int reHp = hp + recover;
-        if(reHp>maxHp) {reHp = maxHp;}
-        hp = reHp;
-        System.out.println(nickName + "(이)가 Hp를 "
-                + recover + "만큼 회복했습니다. ");
+        if(hp + recover > maxHp)
+            hp = maxHp;
+        else
+            hp += recover;
+        System.out.println(nickName + "(이)가 Hp를 " + recover + "만큼 회복했습니다. ");
         System.out.println(nickName + "의 현재 HP : " + hp);
+    }
+
+    public boolean GoldCost(int cost){
+        if (gold < cost) {
+            System.out.println("골드가 부족합니다.");
+            return false;
+        }
+        else {
+            gold = gold - cost;
+            System.out.println(nickName + "의 현재 Gold : " + gold);
+            return true;
+        }
+    }
+
+    public void GetGold(int gold) {
+        System.out.println(gold + "골드를 획득하였습니다.");
+        this.gold += gold;
     }
 
     public void Status(){
