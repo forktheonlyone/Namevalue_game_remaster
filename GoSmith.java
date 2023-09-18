@@ -1,12 +1,12 @@
 // 작성자 : 송한올
 // 23.09.18
-// indev v1.0.10
+// indev v1.0.11
 
 public class GoSmith extends Scene {
 
     public int[][] gear = {{4,6,8}, {1,2,3}};
     public int[][] upgradeGold = {{50,100,150}, {30,60,90}};
-    private int Lv[] = {0,0};
+    public int Lv[] = {0,0};
 
     @Override
     public void Menu() {
@@ -37,7 +37,7 @@ public class GoSmith extends Scene {
     }
     private void Upgrade(int i) {
         int lv = Lv[i];
-        if (Lv[i] == 3)
+        if (lv == 3)
         {
             DialogManager.getInstance().BSmithCannotDialog();
         }
