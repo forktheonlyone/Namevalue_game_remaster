@@ -1,6 +1,6 @@
 // 작성자 : 송한올
 // 23.09.18
-// Indev v1.0.1
+// Indev v1.0.2
 public class DialogManager {
     private static DialogManager instance = null;
     public static DialogManager getInstance() {
@@ -79,11 +79,10 @@ public class DialogManager {
     }
     public void GoBackTownDialog()
     {
-        System.out.println("마을로 돌아간다.");
+        System.out.println("3. 마을로 돌아간다.");
     }
     public void FoodMenuDialog()
     {
-        System.out.print("\n");
         System.out.println("1. 빵 ( -3 Gold ) / ( +5 HP )");
         System.out.println("2. 스튜 ( -6 Gold ) / ( +10 HP )");
         System.out.println("3. 돼지고기 통구이 ( -9 Gold ) / ( +15 HP )");
@@ -112,7 +111,6 @@ public class DialogManager {
     }
     public void SmithUpgradeMenu()
     {
-        System.out.print("\n");
         if (Player.getInstance().getAtk()==8)
             System.out.println("무기 강화 최대치");
         else
