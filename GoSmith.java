@@ -1,24 +1,12 @@
 // 작성자 : 송한올
 // 23.09.18
-// indev v1.0.8
+// indev v1.0.10
 
 public class GoSmith extends Scene {
 
-    public int[][] gear =
-            {
-                    {4, 1},
-                    {6, 2},
-                    {8, 3}
-            };
-    public int[][] upgradesGold =
-            {
-                    {50, 30},
-                    {100, 60},
-                    {150, 90}
-            };
-
-    public int swordUpLv = 0;
-    public int armorUpLv = 0;
+    public int[][] gear = {{4,6,8}, {1,2,3}};
+    public int[][] upgradeGold = {{50,100,150}, {30,60,90}};
+    private int Lv[] = {0,0};
 
     @Override
     public void Menu() {
@@ -30,35 +18,10 @@ public class GoSmith extends Scene {
         Menu();
         switch (ScannerManager.Scan()) {
             case 1:
-                if (swordUpLv == 3) {
-                    DialogManager.getInstance().BSmithCannotDialog();
-                }
-                else if (Player.getPlayer().getGold()>= upgradesGold[swordUpLv][0])
-                {
-                    Player.getPlayer().setGold(Player.getPlayer().getGold() - upgradesGold[swordUpLv][0]);
-                    Player.getPlayer().setAtk(gear[swordUpLv][0]);
-                    swordUpLv++;
-                    DialogManager.getInstance().UpgradeSwordDialog();
-                }
-                else {
-                    DialogManager.getInstance().PoorDialog();
-                }
+                Upgrade(0);
                 return Choose();
             case 2:
-                if (armorUpLv == 3) {
-                    DialogManager.getInstance().BSmithCannotDialog();
-                }
-                else if ( Player.getPlayer().getGold() >= upgradesGold[armorUpLv][1])
-                {
-                    Player.getPlayer().setGold(Player.getPlayer().getGold() - upgradesGold[armorUpLv][1]);
-                    Player.getPlayer().setDef(gear[armorUpLv][1]);
-                    armorUpLv++;
-                    DialogManager.getInstance().UpgradeArmorDialog();
-                }
-                else
-                {
-                    DialogManager.getInstance().PoorDialog();
-                }
+                Upgrade(1);
                 return Choose();
             case 3:
                 return SceneManager.getInstance().getVillage().FirstChoose();
@@ -71,6 +34,18 @@ public class GoSmith extends Scene {
     public Scene FirstChoose() {
         DialogManager.getInstance().SmithBackGround();
         return Choose();
+    }
+    private void Upgrade(int i) {
+        int lv = Lv[i];
+        if (Lv[i] == 3)
+        {
+            DialogManager.getInstance().BSmithCannotDialog();
+        }
+        else if (Player.getPlayer().GoldCost(upgradeGold[i][lv])) {
+            Player.getInstance().setAtk(gear[i][lv]);
+            DialogManager.getInstance().SmithUpgradeDialog(i);
+            Lv[i]++;
+        }
     }
 }
 
