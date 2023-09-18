@@ -1,6 +1,6 @@
 // 작성자 : 송한올
 // 23.09.18
-// indev v1.0.12
+// indev v1.0.13
 
 public class GoSmith extends Scene {
 
@@ -38,7 +38,7 @@ public class GoSmith extends Scene {
     private void Upgrade(int i)
     {
         int lv = Lv[i];
-        if (lv == 3)
+        if (lv >= 3)
         {
             DialogManager.getInstance().BSmithCannotDialog();
         }

@@ -1,6 +1,6 @@
 // 작성자 : 송한올
 // 23.09.18
-// Indev v1.0.4
+// Indev v1.0.5
 public class DialogManager {
     private static DialogManager instance = null;
     public static DialogManager getInstance() {
@@ -112,13 +112,13 @@ public class DialogManager {
     }
     public void SmithUpgradeMenu()
     {
-        if (Player.getInstance().getAtk()==8)
+        if (Player.getInstance().getAtk()>=8)
             System.out.println("무기 강화 최대치");
         else
             System.out.println("1. 무기 강화 / 가격 : " +
                     SceneManager.getInstance().getSmith().upgradeGold[0][SceneManager.getInstance().getSmith().Lv[0]]);
 
-        if (Player.getInstance().getDef()==3)
+        if (Player.getInstance().getDef()>=3)
             System.out.println("방어구 강화 최대치");
         else
             System.out.println("1. 방어구 강화 / 가격 : " +
