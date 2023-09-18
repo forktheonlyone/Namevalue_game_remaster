@@ -11,12 +11,11 @@ public class GoPub extends Scene{
 
     @Override
     public Scene Choose() {
-        DialogManager.getInstance().PubMenuDialog();
+        Menu();
         switch (ScannerManager.Scan())
         {
             case 1 :
-                Restaurant restaurant = new Restaurant();
-                restaurant.InRestaurant();
+                SceneManager.getInstance().getRestaurant().FirstChoose();
                 return Choose();
 
             case 2 :

@@ -90,6 +90,12 @@ public class DialogManager {
         System.out.println("4. 취소");
         System.out.print("\n");
     }
+    public void RestaurantBackGround()
+    {
+        System.out.print("\n");
+        System.out.println("여관 주인 앞 바 테이블에 앉았다.");
+        System.out.print("\n");
+    }
     public void SmithBackGround()
     {
         System.out.print("\n");
@@ -103,6 +109,27 @@ public class DialogManager {
     {
         System.out.print("\n");
         System.out.println("대장장이 : 내 능력으로는 더 이상 강화가 불가능하네.");
+    }
+    public void SmithUpgradeMenu()
+    {
+        if (SceneManager.getInstance().getSmith().swordUpLv == 3)
+        {
+            System.out.println("무기 강화 최대치");
+        }
+        else
+        {
+            System.out.println("1. 무기 강화 ( " + SceneManager.getInstance().getSmith().upgradesGold
+                    [SceneManager.getInstance().getSmith().swordUpLv][0] + " )");
+        }
+        if (SceneManager.getInstance().getSmith().armorUpLv == 3)
+        {
+            System.out.println("방어구 강화 최대치");
+        }
+        else
+        {
+            System.out.println("2. 방어구 강화 ( " + SceneManager.getInstance().getSmith().upgradesGold
+                    [SceneManager.getInstance().getSmith().armorUpLv][1] + " )");
+        }
     }
     public void UpgradeSwordDialog()
     {
