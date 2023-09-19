@@ -1,6 +1,6 @@
 // 작성자 : 송한올
 // 23.09.18
-// Indev v1.0.6
+// Indev v1.0.7
 public class DialogManager {
     private static DialogManager instance = null;
     public static DialogManager getInstance() {
@@ -68,7 +68,6 @@ public class DialogManager {
     {
         System.out.println("1. 다음");
         System.out.println("2. 종료");
-        System.out.println("'이 외의 정수를 입력하면 게임이 종료됩니다'");
     }
     public void PoorDialog()
     {
@@ -152,7 +151,7 @@ public class DialogManager {
     public void SmithUpgradeDialog(int i)
     {
         int j = 0;
-        if (i==0) {
+        if (i == 0) {
             j = Player.getPlayer().getAtk();
             System.out.print("\n");
             System.out.println("강화가 완료되었습니다.");
