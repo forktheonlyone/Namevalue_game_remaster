@@ -151,7 +151,7 @@ public class DialogManager {
     public void SmithUpgradeDialog(int i)
     {
         int j = 0;
-        if (i==0) {
+        if (i == 0) {
             j = Player.getPlayer().getAtk();
             System.out.print("\n");
             System.out.println("강화가 완료되었습니다.");
