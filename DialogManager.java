@@ -1,6 +1,6 @@
 // 작성자 : 송한올
 // 23.09.18
-// Indev v1.0.5
+// Indev v1.0.6
 public class DialogManager {
     private static DialogManager instance = null;
     public static DialogManager getInstance() {
@@ -28,7 +28,7 @@ public class DialogManager {
                                 "'Frostmourne Sword'\n");
 
         System.out.println("1. 게임 시작");
-        System.out.println("2. 종료");
+        System.out.println("'이 외의 정수를 입력하면 게임이 종료됩니다'");
     }
     public void InputName() {
         System.out.print("이름을 입력해주세요: ");
