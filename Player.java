@@ -28,7 +28,7 @@ public class Player extends Charactor{
         atk = 2;
         def = 0;
         speed = 10;
-        gold = 0;
+        gold = 100;
         maxHp = 30;
     }
 
@@ -37,7 +37,6 @@ public class Player extends Charactor{
             hp = maxHp;
         else
             hp += recover;
-        System.out.println(nickName + "(이)가 Hp를 " + recover + "만큼 회복했습니다. ");
         System.out.println(nickName + "의 현재 HP : " + hp);
     }
 
@@ -48,6 +47,7 @@ public class Player extends Charactor{
         }
         else {
             gold = gold - cost;
+            System.out.print("\n");
             System.out.println(nickName + "의 현재 Gold : " + gold);
             return true;
         }
