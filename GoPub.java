@@ -43,7 +43,6 @@ public class GoPub extends Scene{
         if (Player.getPlayer().GoldCost(pay))
         {
             System.out.println(info);
-            System.out.print("\n");
             Player.getPlayer().hpRecovery(heal);
             System.out.println(healInfo);
             System.out.print("\n");
