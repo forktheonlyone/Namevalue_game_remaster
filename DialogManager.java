@@ -46,6 +46,29 @@ public class DialogManager {
     {
         System.out.println("지연에 문제가 생겼습니다, 다시 시도해주세요.");
     }
+    public void GameStoryDialog()
+    {
+        System.out.print("\n");
+        System.out.println("==================== 게임 배경 =====================");
+        System.out.println("이 게임은 가상의 판타지 중세시대를 배경으로 이루어져 있습니다.");
+        System.out.println("===================================================");
+        System.out.print("\n");
+        System.out.println("리치왕의 침공과 저주로 이웃나라들의 몰락 소식이 곳곳에서 들려온다.");
+        System.out.println("물론 우리 가문도 피해를 면치 못했다.");
+        System.out.println("나는 황급히 몸을 숨기고자 외진 시골마을로 출발했다.집안 대대로 내려오는 명검 '화도일문자' ");
+        System.out.println("긴박한 상황속에서 내가 챙긴것은 집안 대대로 내려오는 명검 '화도일문자' 한자루다.");
+        System.out.print("\n");
+        System.out.println("집안에서 내려오는 이야기에 의하면 '화도일문자' 는 저주받은 검 '서리한' 에 대항할 유일한 대책이라니");
+        System.out.println("비록 지금은 닳고 낡아빠진 볼품없는 검으로 밖에 보이지 않지만 ..");
+        System.out.println("지금 당장은 이 검이 유일한 희망인것 같다.");
+        System.out.println("어서 바삐 움직여야 한다.");
+        System.out.print("\n");
+    }
+    public void GameStoryMenu()
+    {
+        System.out.println("1. 다음");
+        System.out.println("'이 외의 정수를 입력하면 게임이 종료됩니다'");
+    }
     public void PoorDialog()
     {
         System.out.print("\n");
@@ -208,7 +231,7 @@ public class DialogManager {
     {
         System.out.println
                 (
-                        "세계는 평화를 되찾았고 우리의 수도인 스톰윈드에 내려졌던 언데드의 저주도 해제되었고\n" +
+                        "세계는 평화를 되찾았고 우리의 수도이자 내 고향인 스톰윈드에 내려졌던 언데드의 저주도 해제되었고\n" +
                         "도시와 마을 곳곳에는 아이들의 웃음소리가 다시 들려오기 시작했다. \n" +
                         "\n" + "이 비극이 두번다시 되는것을 막기위해 나는 설산으로 향했다.\n" +
                         "\n" + "True Ending");

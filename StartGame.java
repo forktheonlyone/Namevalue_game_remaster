@@ -7,7 +7,7 @@ public class StartGame {
         ScannerManager.Initialize();
         DialogManager.getInstance().TitleDialog();
         if (ScannerManager.Scan()==1) {
-            SceneManager.getInstance().getVillage().FirstChoose();
+            SceneManager.getInstance().getStory().FirstChoose();
             }
         else {System.exit(0);}
 

@@ -18,6 +18,7 @@ public class SceneManager {
     private final Scene war = new War();
     private final Scene restaurant = new Restaurant();
     private final Dungeon D = new Dungeon();
+    private final Scene story = new GameStory();
 
     public GoVillage getVillage() {return (GoVillage)village;}
     public GoPub getPub() {return (GoPub)pub;}
@@ -26,6 +27,7 @@ public class SceneManager {
     public Restaurant getRestaurant() {return (Restaurant)restaurant;}
     public War getWar() {return (War)war;}
     public Dungeon getD() {return D;}
+    public GameStory getStory() {return (GameStory)story;}
 
     public void VillageMoveSelect() {
         switch (ScannerManager.Scan()) {
