@@ -67,6 +67,7 @@ public class DialogManager {
     public void GameStoryMenu()
     {
         System.out.println("1. 다음");
+        System.out.println("2. 종료");
         System.out.println("'이 외의 정수를 입력하면 게임이 종료됩니다'");
     }
     public void PoorDialog()

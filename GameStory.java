@@ -17,6 +17,9 @@ public class GameStory extends Scene{
                 return SceneManager.getInstance().getVillage().FirstChoose();
             case 2 :
                 break;
+            default:
+                DialogManager.getInstance().WrongDialog();
+                return Choose();
         }
         return null;
     }
