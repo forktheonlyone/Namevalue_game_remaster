@@ -28,7 +28,7 @@ public class Player extends Charactor{
         atk = 2;
         def = 0;
         speed = 10;
-        gold = 100;
+        gold = 0;
         maxHp = 30;
     }
 
