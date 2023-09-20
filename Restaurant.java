@@ -1,6 +1,6 @@
 // 작성자 : 송한올
-// 23.09.18
-// indev v1.0.5
+// 23.09.19
+// indev v1.0.6
 
 public class Restaurant extends Scene{
     @Override
@@ -23,7 +23,7 @@ public class Restaurant extends Scene{
                 SceneManager.getInstance().getPub().Bill("정말 큰 돼지다. 보기좋게 구워졌다",9, 15, "15 HP 회복 완료!");
                 return Choose();
             case 4 :
-                return SceneManager.getInstance().getPub();
+                return SceneManager.getInstance().getPub().Choose();
             default:
                 DialogManager.getInstance().WrongDialog();
                 return Choose();
